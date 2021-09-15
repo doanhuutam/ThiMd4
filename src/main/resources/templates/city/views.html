@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/home">Back to lists</a>
+<h1>City Details</h1>
+<table border="1">
+    <tr>
+        <th>ThanhPho</th>
+        <th>Dat Nuoc</th>
+        <th>Dien Tich</th>
+        <th>Dan So</th>
+        <th>JDP</th>
+        <th>Mo ta</th>
+
+    </tr>
+    <th:block th:object="${city}">
+        <tr>
+            <td th:text="${city.name}"></td>
+            <td th:text="${city.quocGia.name}"></td>
+            <td th:text="${city.dientich}"></td>
+            <td th:text="${city.danso}"></td>
+            <td th:text="${city.jdp}"></td>
+            <td th:text="${city.mota}"></td>
+
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Player</title>
+</head>
+<body>
+<h1>Create city </h1>
+<p>
+    <a href="/home">list city</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}" style="color: deeppink"></p>
+</th:block>
+<form th:action="@{/create}" th:object="${city}" method="post">
+    <table>
+
+        <tr>
+            <td> Thanh Pho:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Quoc GIa:</td>
+            <td>
+                <select th:field="*{quocGia}">
+                    <option th:each="s : ${datnuoc}" th:value="${s.id}" th:text="${s.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Dien Tich:</td>
+            <td><input type="text" th:field="*{dientich}"/></td>
+        </tr>
+        <tr>
+            <td>Dan so:</td>
+            <td><input type="text" th:field="*{danso}"/></td>
+        </tr>
+        <tr>
+            <td>JDP:</td>
+            <td><input type="text" th:field="*{jdp}"/></td>
+        </tr>
+        <tr>
+            <td>Mo TA:</td>
+            <td><input type="text" th:field="*{mota}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
